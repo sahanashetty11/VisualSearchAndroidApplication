@@ -8,4 +8,4 @@ Problem statement:
 Procedure used for the project:
 -> MobileNet V2 pretrained model on ImageNet was used to retrain the model on cosmetics dataset using python in TensorFlow.
 -> The model was compressed into "graph.lite" and the labels as "labels.txt" which is stored in "assets" folder in Android Studio.
--> The source code for Android applicaton is found in this repository.
+-> The source code for Android applicaton is found in this repository in "tflite" folder.
