@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="475dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:padding="5dp"
+    android:layout_gravity="center"
+    >
+    <TextView
+        android:id="@+id/cancel"
+        android:clickable="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="#FFFFFF"
+        android:text="X"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:background="@drawable/cerclebackground"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange"
+        android:text="Choose the option to buy:"
+        android:fontFamily="@font/metal_mania"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"/>
+
+    <Button
+        android:id="@+id/amazon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/buttonstyle"
+        android:text="Amazon"
+        android:textColor="#FFFFFF" />
+    <Button
+       android:id="@+id/flipkart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flipkart"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/buttonstyle"
+        android:textColor="#FFFFFF"/>
+    
+
+</LinearLayout>

@@ -38,9 +38,11 @@ import org.tensorflow.lite.Interpreter;
 
 /** Classifies images with Tensorflow Lite. */
 public class ImageClassifier {
+  static ImageClassifier classifier;
+
 
   /** Tag for the {@link Log}. */
-  private static final String TAG = "TfLiteCameraDemo";
+  private static final String TAG = "CameraDemo";
 
   /** Name of the model file stored in Assets. */
   private static final String MODEL_PATH = "graph.lite";
@@ -94,6 +96,8 @@ public class ImageClassifier {
 
   /** Initializes an {@code ImageClassifier}. */
   ImageClassifier(Activity activity) throws IOException {
+      classifier=this;
+
     tflite = new Interpreter(loadModelFile(activity));
     labelList = loadLabelList(activity);
     imgData =
@@ -123,7 +127,7 @@ public class ImageClassifier {
 
     // print the results
     String textToShow = printTopKLabels();
-    textToShow = Long.toString(endTime - startTime) + "ms" + textToShow;
+    //textToShow = Long.toString(endTime - startTime) + "ms" + textToShow;
     return textToShow;
   }
 
@@ -215,8 +219,13 @@ public class ImageClassifier {
     final int size = sortedLabels.size();
     for (int i = 0; i < size; ++i) {
       Map.Entry<String, Float> label = sortedLabels.poll();
-      textToShow = String.format("\n%s: %4.2f",label.getKey(),label.getValue()) + textToShow;
+     // textToShow = String.format("\n%s: %4.2",label.getKey(),label.getValue())+ textToShow;
+        textToShow = String.format("\n%s ,",label.getKey())+ textToShow;
     }
-    return textToShow;
+    String d[]=textToShow.split(",");
+    return d[0].toUpperCase();
+  }
+  public static ImageClassifier getInstance(){
+    return classifier;
   }
 }

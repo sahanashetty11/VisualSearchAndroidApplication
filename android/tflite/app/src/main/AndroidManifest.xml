@@ -18,25 +18,54 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.tflitecamerademo">
 
-    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <uses-sdk android:minSdkVersion="21" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"
+        android:required="false"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+
 
     <application android:allowBackup="true"
         android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/splash"
+
         android:theme="@style/MaterialTheme">
 
-        <activity android:name="com.example.android.tflitecamerademo.CameraActivity"
+        <activity android:name="com.example.android.tflitecamerademo.SplashActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CaptureActivity"></activity>
+        <activity android:name="com.example.android.tflitecamerademo.BitmapFragment">
+        </activity>
+        <activity android:name="com.example.android.tflitecamerademo.LogInActivity">
+        </activity>
+        <activity android:name="com.example.android.tflitecamerademo.SignUpActivity"></activity>
+      <activity android:name=".ImgAct"></activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+        <activity android:name="com.example.android.tflitecamerademo.ImagesActivity"></activity>
+        <activity android:name=".BuyActivity"></activity>
+        <activity android:name=".OpenBuying"></activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
+
 
 </manifest>
